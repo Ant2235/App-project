@@ -3,3 +3,14 @@ body{
     color: whitesmoke;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.day-card{
+    background-color: rgb(61, 59, 59);
+    border-radius: 5px;
+    padding: 5px 5px; 
+}
+
+.day-name{
+    background-color: rgb(52, 52, 54);
+     
+}
