@@ -9,17 +9,23 @@ function addTask() {
         alert("Please enter a task");
         return
     }
+    //AI help here
+    
+    let taskList = document.getElementById("li");
+    taskItem.id = "task" generateIdNum();
+    taskItem.classList.add("task-item");
 
-    let taskList = document.getElementById("main");
-
-    let taskDiv = document.createElement("div");
+    /*let taskDiv = document.createElement("div");
     taskDiv.id = "task" + taskList.childElementCount;
     //console.log(taskDiv)
     taskDiv.classList.add("task-item");
+    */
 
     let checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.id = "checkbox" + generateIdNum();
     checkbox.id = "checkbox" + taskList.childElementCount;
+
 
     let lable = document.createElement("label");
     lable.id = "lable " + taskList.childElementCount;
@@ -48,14 +54,5 @@ function removeTask(event) {
     let idNum = checkboxId.substring(8);
     let taskDiv = document.getElementById("task" + idNum);
     taskDiv.classList.add("remove");
-
-    let tasklist = document.getElementById("main");
-
-    setTimeout(function () {
-        tasklist.removeChild(taskDiv);
-        fixTaskColors();
-        localStorage.removeItem(taskDiv.id);
-    }, 1000)
-    
 
 }
