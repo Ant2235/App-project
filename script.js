@@ -10,9 +10,12 @@ function addTask() {
         return
     }
     //AI help here
+    let taskList = document.getElementById("list");
     
-    let taskList = document.getElementById("li");
-    taskItem.id = "task" generateIdNum();
+    let idNum = generateIdNum();
+    
+    let taskItem = document.getElementBytag("li");
+    taskItem.id = "task" + idNum;
     taskItem.classList.add("task-item");
 
     /*let taskDiv = document.createElement("div");
@@ -23,17 +26,19 @@ function addTask() {
 
     let checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    checkbox.id = "checkbox" + generateIdNum();
+    checkbox.id = "checkbox" + idNum;
     checkbox.id = "checkbox" + taskList.childElementCount;
+    checkbox.addEventListener("change", removeTask);
 
 
     let lable = document.createElement("label");
-    lable.id = "lable " + taskList.childElementCount;
+    lable.id = "lable" + idNum;
+    //lable.id = "lable " + taskList.childElementCount;
     lable.innerText = taskText;
 
     taskDiv.appendChild(checkbox);
     taskDiv.appendChild(lable);
-    taskList.appendChild(taskDiv);
+    taskList.appendChild(taskItem);
 }
 
 function generateIdNum() {
