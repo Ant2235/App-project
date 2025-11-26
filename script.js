@@ -9,35 +9,16 @@ function addTask() {
         alert("Please enter a task");
         return
     }
-    //AI help here
+    
     let taskList = document.getElementById("list");
     
     let idNum = generateIdNum();
-    
-    let taskItem = document.getElementBytag("li");
+    //AI help
+    let taskItem = document.createElement("li");
     taskItem.id = "task" + idNum;
     taskItem.classList.add("task-item");
+    taskItem.innerText = taskText;
 
-    /*let taskDiv = document.createElement("div");
-    taskDiv.id = "task" + taskList.childElementCount;
-    //console.log(taskDiv)
-    taskDiv.classList.add("task-item");
-    */
-
-    let checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.id = "checkbox" + idNum;
-    checkbox.id = "checkbox" + taskList.childElementCount;
-    checkbox.addEventListener("change", removeTask);
-
-
-    let lable = document.createElement("label");
-    lable.id = "lable" + idNum;
-    //lable.id = "lable " + taskList.childElementCount;
-    lable.innerText = taskText;
-
-    taskDiv.appendChild(checkbox);
-    taskDiv.appendChild(lable);
     taskList.appendChild(taskItem);
 }
 
@@ -57,7 +38,8 @@ function generateIdNum() {
 function removeTask(event) {
     let checkboxId = event.target.id;
     let idNum = checkboxId.substring(8);
-    let taskDiv = document.getElementById("task" + idNum);
-    taskDiv.classList.add("remove");
+    let taskItem = document.getElementById("task" + idNum);
+    console.log(taskItem)
+    taskItem.classList.add("remove");
 
 }
