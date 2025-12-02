@@ -18,6 +18,8 @@ function addTask() {
     taskItem.id = "task" + idNum;
     taskItem.classList.add("task-item");
     taskItem.innerText = taskText;
+    // Make a remove button AI helped at the end
+    taskItem.innerHTML = taskText +  '<button class="delete-btn" onclick="removeTask(\'task' + idNum + '\')">x</button>';
 
     taskList.appendChild(taskItem);
 }
@@ -35,7 +37,7 @@ function generateIdNum() {
 }
 
 
-function removeTask(event) {
+/*function removeTask(event) {
     let checkboxId = event.target.id;
     let idNum = checkboxId.substring(8);
     let taskItem = document.getElementById("task" + idNum);
@@ -43,3 +45,4 @@ function removeTask(event) {
     taskItem.classList.add("remove");
 
 }
+    */
