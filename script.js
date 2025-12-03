@@ -35,14 +35,8 @@ function generateIdNum() {
     // If it doesn, increment idNum and check again
     return idNum;
 }
-
-
-/*function removeTask(event) {
-    let checkboxId = event.target.id;
-    let idNum = checkboxId.substring(8);
-    let taskItem = document.getElementById("task" + idNum);
-    console.log(taskItem)
-    taskItem.classList.add("remove");
-
+// Remove the task using the made X button
+function removeTask(taskId) {
+    let removeTask = document.getElementById(taskId);
+    removeTask.remove();
 }
-    */
