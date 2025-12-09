@@ -1,7 +1,7 @@
 console.log("script started");
 
-function addTask() {
-    let textBox = document.getElementById("input");
+function addTask(day) {
+    let textBox = document.getElementById(day + "-input");
     //console.log(textBox)
     let taskText = textBox.value;
     textBox.value = "";
@@ -10,12 +10,12 @@ function addTask() {
         return
     }
     
-    let taskList = document.getElementById("list");
+    let taskList = document.getElementById(day + "-list");
     
     let idNum = generateIdNum();
     //AI help
     let taskItem = document.createElement("li");
-    taskItem.id = "task" + idNum;
+    taskItem.id = day + "-task" + idNum;
     taskItem.classList.add("task-item");
     taskItem.innerText = taskText;
     // Make a remove button AI helped at the end
