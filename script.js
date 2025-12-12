@@ -19,7 +19,7 @@ function addTask(day) {
     taskItem.classList.add("task-item");
     taskItem.innerText = taskText;
     // Make a remove button AI helped at the end
-    taskItem.innerHTML = taskText +  '<button class="delete-btn" onclick="removeTask(\'task' + idNum + '\')">x</button>';
+    taskItem.innerHTML = taskText +  '<button class="delete-btn" onclick="removeTask(\'' + day + "-task" + idNum + '\')">X</button>';
 
     taskList.appendChild(taskItem);
 }
